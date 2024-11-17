@@ -1,0 +1,7 @@
+{
+  "name": "Toudrex",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "vue-vite"
+}
