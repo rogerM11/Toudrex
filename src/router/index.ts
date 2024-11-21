@@ -1,11 +1,22 @@
 import { createRouter, createWebHistory } from '@ionic/vue-router';
 import { RouteRecordRaw } from 'vue-router';
 import TabsPage from '../views/TabsPage.vue'
+import LoginView from '@/views/LoginView.vue';
+import WelcomeView from '@/views/WelcomeView.vue';
+import MensajeDetalle from '@/views/MensajeDetalle.vue';
 
 const routes: Array<RouteRecordRaw> = [
   {
+    path: '/login',
+    component: LoginView
+  },
+  {
     path: '/',
-    redirect: '/tabs/tab1'
+    component: WelcomeView
+  },
+  {
+    path: '/chat-detail',
+    component: MensajeDetalle
   },
   {
     path: '/tabs/',
@@ -17,15 +28,15 @@ const routes: Array<RouteRecordRaw> = [
       },
       {
         path: 'tab1',
-        component: () => import('@/views/Tab1Page.vue')
+        component: () => import('@/views/PublicacionesView.vue')
       },
       {
         path: 'tab2',
-        component: () => import('@/views/Tab2Page.vue')
+        component: () => import('@/views/MensajesView.vue')
       },
       {
         path: 'tab3',
-        component: () => import('@/views/Tab3Page.vue')
+        component: () => import('@/views/PerfilView.vue')
       }
     ]
   }
