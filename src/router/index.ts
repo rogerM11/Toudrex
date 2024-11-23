@@ -36,6 +36,10 @@ const routes: Array<RouteRecordRaw> = [
       },
       {
         path: 'tab3',
+        component: () => import('@/views/AmigosView.vue')
+      },
+      {
+        path: 'tab4',
         component: () => import('@/views/PerfilView.vue')
       }
     ]

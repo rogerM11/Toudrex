@@ -3,7 +3,7 @@
         <ion-header>
             <ion-toolbar>
                 <ion-buttons slot="start">
-                    <ion-back-button default-href="tab2"></ion-back-button>
+                    <ion-back-button href="tab2"></ion-back-button>
                 </ion-buttons>
                 <ion-title>Chat con Ana Martínez</ion-title>
             </ion-toolbar>
@@ -13,7 +13,7 @@
             <div class="messages">
                 <div class="message received">
                     <ion-avatar slot="start">
-                        <img src="" alt="user-avatar" />
+                        <img src="https://i.pinimg.com/736x/28/e6/79/28e6799b85751b1e664efe21c457d0ea.jpg" alt="user-avatar" />
                     </ion-avatar>
                     <ion-label>
                         <p>¡Hola! ¿Cómo estás?</p>
@@ -22,16 +22,16 @@
 
                 <div class="message sent">
                     <ion-avatar slot="start">
-                        <img src="" alt="user-avatar" />
+                        <img src="https://i.pinimg.com/736x/28/e6/79/28e6799b85751b1e664efe21c457d0ea.jpg" alt="user-avatar" />
                     </ion-avatar>
                     <ion-label>
                         <p>Estoy bien, ¿y tú?</p>
                     </ion-label>
                 </div>
 
-                <div class="message received">
+                <div class="message-received">
                     <ion-avatar slot="start">
-                        <img src="" alt="user-avatar" />
+                        <img src="https://i.pinimg.com/736x/28/e6/79/28e6799b85751b1e664efe21c457d0ea.jpg" alt="user-avatar" />
                     </ion-avatar>
                     <ion-label>
                         <p>Todo bien, gracias por preguntar.</p>
@@ -42,7 +42,7 @@
             <div class="send-message">
                 <ion-input type="text" placeholder="Escribe un mensaje" v-model="newMessage"></ion-input>
                 <ion-button @click="sendMessage" fill="clear">
-                    <ion-icon name="send-outline"></ion-icon>
+                    <ion-icon :icon="sendOutline"></ion-icon>
                 </ion-button>
             </div>
         </ion-content>
@@ -50,14 +50,15 @@
 </template>
 
 <script setup lang="ts">
-import { IonPage, IonHeader, IonToolbar, IonTitle, IonContent, IonItem, IonAvatar, IonLabel, IonInput, IonButton, IonIcon, IonBackButton } from '@ionic/vue';
+import { IonPage, IonHeader, IonToolbar, IonTitle, IonContent,  IonAvatar, IonLabel, IonInput, IonButton,IonButtons, IonIcon, IonBackButton } from '@ionic/vue';
 import { ref } from 'vue';
+import { sendOutline} from 'ionicons/icons';
 
 const newMessage = ref('');
 
 function sendMessage() {
     console.log('Nuevo mensaje enviado:', newMessage.value);
-    newMessage.value = ''; // Limpiar campo de mensaje después de enviarlo
+    newMessage.value = ''; 
 }
 </script>
 

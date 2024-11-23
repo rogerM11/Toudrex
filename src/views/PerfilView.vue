@@ -3,49 +3,48 @@
         <ion-header>
             <ion-toolbar>
                 <ion-title>Perfil</ion-title>
+                 
             </ion-toolbar>
         </ion-header>
 
         <ion-content :fullscreen="true" class="profile-background">
+            <!-- Foto de portada -->
+            <div class="cover-photo-container">
+                <img src="https://i.pinimg.com/736x/51/ad/cc/51adcc701547d68960b50e01b4018b7d.jpg" alt="Foto de portada" class="cover-photo" />
+            </div>
+
             <div class="profile-container">
                 <!-- Foto de perfil -->
                 <div class="profile-image-container">
-                    <ion-avatar>
-                        <img src="" alt="Foto de perfil" />
-                    </ion-avatar>
+                    <div class="profile-image">
+                        <img src="https://i.pinimg.com/736x/28/e6/79/28e6799b85751b1e664efe21c457d0ea.jpg" alt="Foto de perfil" />
+                    </div>
                 </div>
 
                 <div class="user-info">
                     <div class="info-item">
-                        <ion-icon  :icon="personCircleOutline" class="info-icon"></ion-icon>
+                        <ion-icon :icon="personCircleOutline" class="info-icon"></ion-icon>
                         <h3>Roger Morales</h3>
                     </div>
 
                     <div class="info-item">
                         <ion-icon :icon="mailOutline" class="info-icon"></ion-icon>
-                        <p>juan.perez@example.com</p>
+                        <p>el_bicho@siuu.com</p>
                     </div>
-
                     <div class="info-item">
-                        <ion-icon  :icon="calendarOutline" class="info-icon"></ion-icon>
-                        <p>Miembro desde Enero 2023</p>
-                    </div>
-
-                    <div class="info-item">
-                        <ion-icon  :icon="locationOutline" class="info-icon"></ion-icon>
+                        <ion-icon :icon="locationOutline" class="info-icon"></ion-icon>
                         <p>Quezalte</p>
                     </div>
                 </div>
 
-                <!-- Botones de acción -->
                 <div class="action-buttons">
                     <ion-button expand="block" @click="editProfile" color="primary">
-                        <ion-icon slot="start" :icon="createOutline" ></ion-icon>
+                        <ion-icon slot="start" :icon="createOutline"></ion-icon>
                         Editar perfil
                     </ion-button>
 
                     <ion-button expand="block" @click="logout" color="danger">
-                        <ion-icon slot="start" :icon="logOutOutline" ></ion-icon>
+                        <ion-icon slot="start" :icon="logOutOutline"></ion-icon>
                         Cerrar sesión
                     </ion-button>
                 </div>
@@ -55,9 +54,9 @@
 </template>
 
 <script setup lang="ts">
-import { IonPage, IonHeader, IonToolbar, IonTitle, IonContent, IonButton, IonAvatar, IonIcon } from '@ionic/vue';
+import { IonPage, IonHeader, IonToolbar, IonTitle, IonContent, IonButton, IonIcon } from '@ionic/vue';
 import { useRouter } from 'vue-router';
-import { personCircleOutline, mailOutline,calendarOutline,locationOutline, createOutline, logOutOutline } from 'ionicons/icons';
+import { personCircleOutline, mailOutline, locationOutline, createOutline, logOutOutline } from 'ionicons/icons';
 
 const router = useRouter();
 
@@ -71,39 +70,63 @@ function logout() {
 </script>
 
 <style scoped>
+ion-toolbar {
+    --background: #02f17a;
+}
+
 .profile-background {
     background-color: #f4f7fc;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
     height: 100vh;
 }
 
+.cover-photo-container {
+    width: 100%;
+    max-height: 250px;
+    overflow: hidden;
+}
+
+.cover-photo {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
 .profile-container {
     text-align: center;
-    width: 90%;
+    width: 100%;
     max-width: 400px;
     padding: 20px;
     background-color: white;
     border-radius: 12px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: -75px;
+    z-index: 1;
+    position: relative;
 }
 
 .profile-image-container {
-    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: -60px;
+    margin-bottom: 10px;
 }
 
-ion-avatar img {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
+.profile-image img {
+    width: 150px; 
+    height: 150px;
+    border-radius: 50%; 
     object-fit: cover;
     box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+    border: 4px solid white;
 }
 
 .user-info {
     width: 100%;
+    margin-top: 15px;
     margin-bottom: 20px;
 }
 
@@ -123,7 +146,7 @@ ion-avatar img {
 }
 
 h3 {
-    font-size: 1.5rem;
+    font-size: 1.6rem;
     font-weight: bold;
     color: #333;
 }

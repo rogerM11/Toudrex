@@ -27,7 +27,7 @@
 </template>
 
 <script setup lang="ts">
-import { IonButton, IonContent, IonIcon } from '@ionic/vue';
+import { IonButton, IonContent, IonIcon,IonPage } from '@ionic/vue';
 import { useRouter } from 'vue-router';
 import { keyOutline, addCircleOutline } from 'ionicons/icons';
 
