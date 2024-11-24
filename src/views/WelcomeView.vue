@@ -38,7 +38,7 @@ function goToLogin() {
 }
 
 function goToRegister() {
-    router.push('/register'); 
+    router.push('/registrarse'); 
 }
 </script>
 

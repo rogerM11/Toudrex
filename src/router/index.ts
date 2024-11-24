@@ -4,11 +4,16 @@ import TabsPage from '../views/TabsPage.vue'
 import LoginView from '@/views/LoginView.vue';
 import WelcomeView from '@/views/WelcomeView.vue';
 import MensajeDetalle from '@/views/MensajeDetalle.vue';
+import RegistrarView from '@/views/RegistrarView.vue';
 
 const routes: Array<RouteRecordRaw> = [
   {
     path: '/login',
     component: LoginView
+  },
+  {
+    path: '/registrarse',
+    component: RegistrarView
   },
   {
     path: '/',
